@@ -9,7 +9,8 @@ int main() {
     cout << "請輸入要輸入的姓名數量 x：" << endl;
     cin >> x;
     
-    cin.ignore();  // 清除前一次輸入的換行符號
+    // 捕獲換行符號
+    cin.ignore(100, '\n');
     
     char** dynamicArray = new char*[x];
     
@@ -20,8 +21,6 @@ int main() {
         cout << "請輸入姓名 #" << i + 1 << "：" << endl;
         
         char input[100];  // 假定最長的姓名不超過 100 個字符
-        
-        cin.ignore(); // 清除之前的輸入緩衝區
         
         cin.getline(input, sizeof(input));
         
@@ -72,6 +71,12 @@ int main() {
     for (int i = 0; i < x; i++) {
         delete[] dynamicArray[i];
     }
+    
+    delete[] dynamicArray;
+    
+    return 0;
+}
+
     
     delete[] dynamicArray;
     
