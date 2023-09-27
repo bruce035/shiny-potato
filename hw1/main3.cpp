@@ -76,9 +76,3 @@ int main() {
     
     return 0;
 }
-
-    
-    delete[] dynamicArray;
-    
-    return 0;
-}
