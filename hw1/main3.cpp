@@ -9,13 +9,12 @@ int main() {
     cout << "請輸入要輸入的姓名數量 x：" << endl;
     cin >> x;
     
-    // 捕獲換行符號
+    // 等換行符號
     cin.ignore(100, '\n');
     
     char** dynamicArray = new char*[x];
-    
-    int maxLength = 0;  // 用於記錄最長姓名的長度
-    int MaxfirstNameLength = 0;
+ 
+    int MaxfirstNameLength = 0;// 用於記錄MaxfirstNameLength
     
     for (int i = 0; i < x; i++) {
         cout << "請輸入姓名 #" << i + 1 << "：" << endl;
@@ -26,11 +25,6 @@ int main() {
         
         // 計算姓名的長度
         int length = strlen(input);
-        
-        // 更新最長姓名的長度
-        if (length > maxLength) {
-            maxLength = length;
-        }
         
         const char* spacePosition = strchr(input, ' ');
 
